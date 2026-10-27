@@ -1,0 +1,23 @@
+{
+  "name": "fronkova_playwright_academy",
+  "version": "1.0.0",
+  "description": "Playwright Academy",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeronikaFron/fronkova_playwright_academy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/VeronikaFron/fronkova_playwright_academy/issues"
+  },
+  "homepage": "https://github.com/VeronikaFron/fronkova_playwright_academy#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5"
+  }
+}
