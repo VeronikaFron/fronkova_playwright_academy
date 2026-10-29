@@ -1,10 +1,14 @@
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
+import { AutomationTestStoreRegistrationPage } from "./pages/AutomationTestStoreRegistrationPage";
 
-test("Vyplnění jména a příjmení", async ({ page }) => {
-  await page.goto(
-    "https://automationteststore.com/index.php?rt=account/create",
-  );
-  await page.getByLabel("First Name").fill("Veronika");
-  await page.getByLabel("Last Name").fill("Fronková");
-  await page.getByRole("button", { name: "Continue" }).click();
+test("Vyplní jméno a příjmení při registraci", async ({ page }) => {
+  const registrationPage = new AutomationTestStoreRegistrationPage(page);
+
+  await registrationPage.goto();
+  await expect(registrationPage.heading).toBeVisible();
+
+  await registrationPage.fillName("Veronika", "Fronková");
+
+  await expect(registrationPage.firstNameInput).toHaveValue("Veronika");
+  await expect(registrationPage.lastNameInput).toHaveValue("Fronková");
 });
